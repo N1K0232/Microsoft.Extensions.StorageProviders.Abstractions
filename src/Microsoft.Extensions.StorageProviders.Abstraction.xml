@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Extensions.StorageProviders.Abstraction</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Extensions.StorageProviders.IStorageProvider">
+            <summary>
+            contains all the methods that the storage providers must implement
+            </summary>
+        </member>
+        <member name="P:Microsoft.Extensions.StorageProviders.IStorageProvider.ServiceProvider">
+            <summary>
+            gets or sets the ServiceProvider for this object
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.StorageProviders.IStorageProvider.ReadAsString(System.String)">
+            <summary>
+            gets the content as a <see cref="T:System.String"/>
+            </summary>
+            <param name="path">the path of the file</param>
+            <returns>the content as a <see cref="T:System.String"/></returns>
+        </member>
+        <member name="M:Microsoft.Extensions.StorageProviders.IStorageProvider.ReadAsStream(System.String)">
+            <summary>
+            gets the content as a <see cref="T:System.IO.Stream"/>
+            </summary>
+            <param name="path">the path of the file</param>
+            <returns>the content as a <see cref="T:System.IO.Stream"/></returns>
+        </member>
+        <member name="M:Microsoft.Extensions.StorageProviders.IStorageProvider.ReadAsStringAsync(System.String)">
+            <summary>
+            like the <see cref="M:Microsoft.Extensions.StorageProviders.IStorageProvider.ReadAsString(System.String)"/> but asynchronously
+            </summary>
+            <param name="path">the path of the file</param>
+            <returns>the content as <see cref="T:System.String"/></returns>
+        </member>
+        <member name="M:Microsoft.Extensions.StorageProviders.IStorageProvider.ReadAsStreamAsync(System.String)">
+            <summary>
+            like the <see cref="M:Microsoft.Extensions.StorageProviders.IStorageProvider.ReadAsStream(System.String)"/> but asynchronously
+            </summary>
+            <param name="path">the path of the file</param>
+            <returns>the content as <see cref="T:System.IO.Stream"/></returns>
+        </member>
+        <member name="T:Microsoft.Extensions.StorageProviders.StorageProvider">
+            <summary>
+            the base class for all the storage providers
+            this class must be inherited
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.StorageProviders.StorageProvider.#ctor">
+            <summary>
+            creates a new instance of the <see cref="T:Microsoft.Extensions.StorageProviders.StorageProvider"/> class
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.StorageProviders.StorageProvider.#ctor(System.IServiceProvider)">
+            <summary>
+            creates a new instance of the <see cref="T:Microsoft.Extensions.StorageProviders.StorageProvider"/> class with the specified
+            <see cref="T:System.IServiceProvider"/>
+            </summary>
+            <param name="serviceProvider">the IServiceProvider for this instance</param>
+        </member>
+        <member name="P:Microsoft.Extensions.StorageProviders.StorageProvider.ServiceProvider">
+            <summary>
+            gets or sets the ServiceProvider for this object
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.StorageProviders.StorageProvider.ReadAsString(System.String)">
+            <summary>
+            gets the content as a <see cref="T:System.String"/>
+            </summary>
+            <param name="path">the path of the file</param>
+            <returns>the content as a <see cref="T:System.String"/></returns>
+        </member>
+        <member name="M:Microsoft.Extensions.StorageProviders.StorageProvider.ReadAsStream(System.String)">
+            <summary>
+            gets the content as a <see cref="T:System.IO.Stream"/>
+            </summary>
+            <param name="path">the path of the file</param>
+            <returns>the content as a <see cref="T:System.IO.Stream"/></returns>
+        </member>
+        <member name="M:Microsoft.Extensions.StorageProviders.StorageProvider.ReadAsStringAsync(System.String)">
+            <summary>
+            like the <see cref="M:Microsoft.Extensions.StorageProviders.StorageProvider.ReadAsString(System.String)"/> but asynchronously
+            </summary>
+            <param name="path">the path of the file</param>
+            <returns>the content as <see cref="T:System.String"/></returns>
+        </member>
+        <member name="M:Microsoft.Extensions.StorageProviders.StorageProvider.ReadAsStreamAsync(System.String)">
+            <summary>
+            like the <see cref="M:Microsoft.Extensions.StorageProviders.StorageProvider.ReadAsStream(System.String)"/> but asynchronously
+            </summary>
+            <param name="path">the path of the file</param>
+            <returns>the content as <see cref="T:System.IO.Stream"/></returns>
+        </member>
+        <member name="M:Microsoft.Extensions.StorageProviders.StorageProvider.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting
+            unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.StorageProviders.StorageProvider.DisposeAsync">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting
+            unmanaged resources asynchronously.
+            </summary>
+            <returns> A task that represents the asynchronous dispose operation.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.StorageProviders.StorageProvider.Dispose(System.Boolean)">
+            <summary>
+            performs the operation during object disposing
+            </summary>
+            <param name="disposing">true if the object should be disposed otherwise false</param>
+        </member>
+        <member name="M:Microsoft.Extensions.StorageProviders.StorageProvider.ThrowIfDisposed">
+            <summary>
+            throws a <see cref="T:System.ObjectDisposedException"/> if the <see cref="F:Microsoft.Extensions.StorageProviders.StorageProvider._disposed"/>
+            field is true
+            </summary>
+            <exception cref="T:System.ObjectDisposedException">if the object is disposed throws an exception</exception>
+        </member>
+        <member name="T:Microsoft.Extensions.DependencyInjection.ServiceCollectionExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceCollectionExtensions.AddStorageProvider``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.DependencyInjection.ServiceLifetime)">
+            <summary>
+            registers an instance of the <see cref="T:Microsoft.Extensions.StorageProviders.IStorageProvider"/> in the dependency injection system
+            </summary>
+            <typeparam name="TProvider">the <see cref="T:Microsoft.Extensions.StorageProviders.IStorageProvider"/> instance</typeparam>
+            <param name="services">the list of services</param>
+            <param name="serviceLifetime">specifies which lifetime we want for our <see cref="T:Microsoft.Extensions.StorageProviders.IStorageProvider"/>
+            default is <see cref="F:Microsoft.Extensions.DependencyInjection.ServiceLifetime.Scoped"/></param>
+            <returns>the collection of services</returns>
+        </member>
+    </members>
+</doc>

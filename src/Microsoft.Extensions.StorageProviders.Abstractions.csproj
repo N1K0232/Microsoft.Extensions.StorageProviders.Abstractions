@@ -1,14 +1,41 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
+		<PropertyGroup>
+				<TargetFramework>net6.0</TargetFramework>
+				<ImplicitUsings>enable</ImplicitUsings>
+				<Nullable>enable</Nullable>
+				<DocumentationFile>Microsoft.Extensions.StorageProviders.Abstraction.xml</DocumentationFile>
+				<Authors>Nicola Silvestri</Authors>
+				<Company>N1K0232</Company>
+				<AssemblyName>Microsoft.Extensions.StorageProviders.Abstraction</AssemblyName>
+				<Product>Microsoft.Extensions.StorageProviders.Abstractions</Product>
+				<Title>Microsoft.Extensions.StorageProviders.Abstractions</Title>
+				<Description>Abstractions for Microsoft.Extensions.StorageProviders</Description>
+				<PackageId>Microsoft.Extensions.StorageProviders.Abstractions</PackageId>
+				<PackageLicenseExpression>MIT</PackageLicenseExpression>
+				<PackageProjectUrl>https://github.com/N1K0232/Microsoft.Extensions.StorageProviders.Abstractions</PackageProjectUrl>
+				<PackageTags>csharp visualstudio aspnetcore webapi utilities helpers</PackageTags>
+				<RepositoryType>git</RepositoryType>
+				<RepositoryUrl>https://github.com/N1K0232/Microsoft.Extensions.StorageProviders.Abstraction.git</RepositoryUrl>
+				<RepositoryBranch>master</RepositoryBranch>
+				<PackageReadmeFile>README.md</PackageReadmeFile>
+				<PublishRepositoryUrl>true</PublishRepositoryUrl>
+				<EmbedUntrackedSources>true</EmbedUntrackedSources>
+				<DebugType>embedded</DebugType>
+		</PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="6.0.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="6.0.1" />
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Nerdbank.GitVersioning" Version="3.5.119">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
   </ItemGroup>
 
 </Project>
